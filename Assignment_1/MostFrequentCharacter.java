@@ -7,19 +7,22 @@ public class MostFrequentCharacter {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a string here---> ");
         String s = sc.nextLine();
-        HashMap<Character, Integer> hm = new HashMap<>();
+
+        int[] freq = new int[256]; // ASCII character frequency array
         for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            hm.put(ch, hm.getOrDefault(ch, 0) + 1);
+            freq[s.charAt(i)]++;
         }
+
         char totalCharacter = ' ';
         int totalFreq = 0;
-        for (Map.Entry<Character, Integer> entry : hm.entrySet()) {
-            if (entry.getValue() > totalFreq) {
-                totalFreq = entry.getValue();
-                totalCharacter = entry.getKey();
+
+        for (int i = 0; i < 256; i++) {
+            if (freq[i] > totalFreq) {
+                totalFreq = freq[i];
+                totalCharacter = (char) i;
             }
         }
+
         System.out.println("Most Frequent Character: '" + totalCharacter + "'");
         sc.close();
     }
