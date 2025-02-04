@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Problem1_Solution {
+public class SimpleInterest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double principal = scanner.nextDouble();

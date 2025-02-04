@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Problem3_Solution {
+public class Power {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double base = scanner.nextDouble();
